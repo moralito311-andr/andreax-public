@@ -1,0 +1,9 @@
+{
+  "_comentario": "Config para Claude Desktop / Cursor. Andreax expone su catalogo x402 como servidor MCP remoto (streamable HTTP) en pagos.andreax.dev/mcp -- verificado en el ingress publico del tunel de Cloudflare. Manifiesto publico: https://pagos.andreax.dev/.well-known/x402.json. Los pagos x402 los firma la wallet configurada del lado del cliente MCP; Claude Desktop/Cursor no firman transacciones por si solos -- para automatizar el pago end-to-end desde un script, usar uno de los 3 SDKs (ver ../docs/sdk-reference.md) en vez de este MCP directo.",
+  "mcpServers": {
+    "andreax": {
+      "url": "https://pagos.andreax.dev/mcp",
+      "type": "http"
+    }
+  }
+}
