@@ -1,0 +1,45 @@
+version: 1
+name: andreax
+description: "Pay-per-call AI tools marketplace with 200+ tools. Agents discover, pay via x402 (USDC on Base), and receive results. No API keys, no signup."
+icon: 🔧
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      wallet_address:
+        type: string
+        description: "Wallet address for the agent to pay from"
+      private_key:
+        type: string
+        description: "Private key for signing EIP-3009 payments (stays local)"
+      auto_pay:
+        type: boolean
+        default: false
+        description: "Whether to auto-pay for tool calls"
+      per_call_cap_usd:
+        type: number
+        default: 0.10
+        description: "Max USD per call"
+      daily_cap_usd:
+        type: number
+        default: 5.00
+        description: "Max USD per day"
+    required: [wallet_address, private_key]
+build:
+  dockerfile: Dockerfile
+  dockerBuildPath: .
+capabilities:
+  tools: true
+  resources: false
+  prompts: false
+metadata:
+  author: andres_morales
+  version: 0.1.0
+  license: MIT
+  homepage: https://andreax.dev
+  discover_endpoint: https://andreax.dev/api/agents/discover
+  repository: https://github.com/moralito311-andr/andreax
+  tags: [ai, payments, x402, base, usdc, agents, marketplace]
+  categories: [ai-tools, payments, developer-tools]
+  sdk: "pip install andreax-langchain-autopay"

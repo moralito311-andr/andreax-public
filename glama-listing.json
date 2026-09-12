@@ -1,0 +1,35 @@
+{
+  "name": "Andreax",
+  "description": "Pay-per-call AI tools marketplace. 200+ tools (OCR, translate, summarize, embeddings, financial, code analysis) that charge via x402 + USDC on Base. No API keys, no signup — payment IS the auth.",
+  "url": "https://andreax.dev",
+  "discover_endpoint": "https://andreax.dev/api/agents/discover",
+  "docs": "https://andreax.dev/docs/interactive",
+  "category": "ai-tools",
+  "tags": ["ai", "payments", "x402", "base", "usdc", "agents", "marketplace", "micropayments"],
+  "auth_method": "x402_payment",
+  "pricing_model": "per_call",
+  "pricing_range": "$0.01 - $1.00 per call",
+  "free_tier": "5 free calls for new humans, 15 free calls for AI agents",
+  "sdks": {
+    "python": "pip install andreax-langchain-autopay",
+    "langchain": "pip install andreax-langchain-autopay"
+  },
+  "contact": "andres@andreax.dev",
+  "author": {
+    "name": "Andrés Morales",
+    "url": "https://andreax.dev"
+  },
+  "metadata": {
+    "tools_count": 202,
+    "blockchain": "base_mainnet",
+    "payment_token": "USDC",
+    "payment_standard": "x402 + EIP-3009",
+    "gasless": true,
+    "sdk_status": {
+      "python_langchain": "published",
+      "python_pure": "pending",
+      "javascript": "pending"
+    },
+    "pypi_url": "https://pypi.org/project/andreax-langchain-autopay/0.1.0/"
+  }
+}
