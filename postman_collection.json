@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "Andreax API",
+    "description": "Andreax — pay-per-call AI tools marketplace (x402 + USDC on Base). Todos los endpoints de esta colección se verificaron reales contra el servidor en vivo antes de publicarla (curl real, no asumido). Nota: /api/agents/manifest y /api/agents/consume NO están incluidos porque hoy no existen en el servidor (404) — se agregarán cuando se reconstruyan.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "https://andreax.dev" }
+  ],
+  "item": [
+    {
+      "name": "Discover catalog",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/api/agents/discover", "host": ["{{base_url}}"], "path": ["api", "agents", "discover"] },
+        "description": "Catálogo completo de tools (name, price_usdc, description, endpoint). Sin pago, sin auth."
+      }
+    },
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/api/health", "host": ["{{base_url}}"], "path": ["api", "health"] },
+        "description": "Estado real de catálogo, facilitador, trading loop, túnel, el_verbo y demand_evolution."
+      }
+    },
+    {
+      "name": "Metrics dashboard",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/api/metrics", "host": ["{{base_url}}"], "path": ["api", "metrics"] },
+        "description": "Demanda, finanzas, tráfico y gaps de demand_evolution consolidados."
+      }
+    },
+    {
+      "name": "Catalogo x402 (formato v2)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/api/taller/peaje/catalogo", "host": ["{{base_url}}"], "path": ["api", "taller", "peaje", "catalogo"] },
+        "description": "Catálogo x402 v2 (accepts/PaymentRequirements por tool) — el formato que consumen los SDKs."
+      }
+    },
+    {
+      "name": "Call a tool WITHOUT payment (expect 402)",
+      "request": {
+        "method": "POST",
+        "url": { "raw": "{{base_url}}/api/taller/peaje/traducir?input=hola", "host": ["{{base_url}}"], "path": ["api", "taller", "peaje", "traducir"], "query": [{ "key": "input", "value": "hola" }] },
+        "description": "Sin cabecera X-PAYMENT: responde 402 con el reto x402 (amount, payTo, network, asset)."
+      }
+    },
+    {
+      "name": "Call a tool WITH payment (X-PAYMENT)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "X-PAYMENT", "value": "<base64 del PaymentPayload x402 v2 — firmalo con uno de los 3 SDKs, no a mano>" }
+        ],
+        "url": { "raw": "{{base_url}}/api/taller/peaje/traducir?input=hola", "host": ["{{base_url}}"], "path": ["api", "taller", "peaje", "traducir"], "query": [{ "key": "input", "value": "hola" }] },
+        "description": "Con X-PAYMENT válido: verifica + liquida on-chain y devuelve el resultado real (200)."
+      }
+    },
+    {
+      "name": "Try a tool for free (sample)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/api/taller/peaje/traducir?sample=1", "host": ["{{base_url}}"], "path": ["api", "taller", "peaje", "traducir"], "query": [{ "key": "sample", "value": "1" }] },
+        "description": "?sample=1: muestra gratis del output, sin pago ni cómputo real."
+      }
+    }
+  ]
+}
