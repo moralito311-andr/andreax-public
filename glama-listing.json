@@ -12,7 +12,9 @@
   "free_tier": "5 free calls for new humans, 15 free calls for AI agents",
   "sdks": {
     "python": "pip install andreax-langchain-autopay",
-    "langchain": "pip install andreax-langchain-autopay"
+    "python_pure": "pip install andreax-sdk",
+    "langchain": "pip install andreax-langchain-autopay",
+    "javascript": "npm install @andreax/sdk"
   },
   "contact": "andres@andreax.dev",
   "author": {
@@ -20,16 +22,17 @@
     "url": "https://andreax.dev"
   },
   "metadata": {
-    "tools_count": 202,
+    "tools_count": 207,
     "blockchain": "base_mainnet",
     "payment_token": "USDC",
     "payment_standard": "x402 + EIP-3009",
     "gasless": true,
     "sdk_status": {
       "python_langchain": "published",
-      "python_pure": "pending",
-      "javascript": "pending"
+      "python_pure": "ready_to_publish",
+      "javascript": "ready_to_publish"
     },
-    "pypi_url": "https://pypi.org/project/andreax-langchain-autopay/0.1.0/"
+    "pypi_url": "https://pypi.org/project/andreax-langchain-autopay/0.1.0/",
+    "sdk_notes": "python_pure y javascript estan construidos, testeados (14/14 y 11/11) y verificados end-to-end contra el catalogo real, pero AUN NO publicados en PyPI/npm — ver /app/sdk/PUBLISH_PYPI_PURE.md y PUBLISH_NPM.md. Actualizar sdk_status a 'published' recien despues de correr esos pasos."
   }
 }

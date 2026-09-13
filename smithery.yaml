@@ -43,3 +43,7 @@ metadata:
   tags: [ai, payments, x402, base, usdc, agents, marketplace]
   categories: [ai-tools, payments, developer-tools]
   sdk: "pip install andreax-langchain-autopay"
+  sdks:
+    python_langchain: "pip install andreax-langchain-autopay"  # publicado en PyPI
+    python_pure: "pip install andreax-sdk"  # construido y testeado (14/14), pendiente de publicar (ver /app/sdk/PUBLISH_PYPI_PURE.md)
+    javascript: "npm install @andreax/sdk"  # construido y testeado, pendiente de publicar (ver /app/sdk/PUBLISH_NPM.md)
