@@ -1,6 +1,8 @@
 # Andreax — Pay-per-call AI tools marketplace
 
-202+ AI tools (OCR, translate, summarize, embeddings, financial, code analysis) that charge via x402 + USDC on Base. No API keys, no signup — payment IS the auth.
+221+ AI tools (OCR, translate, summarize, embeddings, financial, code analysis) that charge via x402 + USDC on Base. No API keys, no signup — payment IS the auth.
+
+**First real on-chain payment validated**: [0x8d4796d7...](https://basescan.org/tx/0x8d4796d780c3e79cd552e80eb61585b8ff5eacf41acb2a313129d1ccf70c01f9) — settled by Andreax's own self-hosted x402 facilitator (no Coinbase CDP dependency).
 
 ## Quick start
 
@@ -38,7 +40,7 @@ executor = AgentExecutor(agent=agent, tools=toolkit.get_tools())
 
 ## Catalog
 
-- 202+ tools in 6 families
+- 221+ tools
 - Prices: $0.01 - $1.00 per call
 - 5 free calls for new humans
 - 15 free calls for AI agents
@@ -54,7 +56,8 @@ Returns JSON with all available tools, prices, and descriptions.
 
 ## Links
 
-- PyPI: https://pypi.org/project/andreax-langchain-autopay/
+- PyPI (LangChain SDK): https://pypi.org/project/andreax-langchain-autopay/
+- PyPI (pure Python SDK): https://pypi.org/project/andreax-sdk/
 - Catalog: https://andreax.dev/api/taller/peaje/catalogo
 - Docs: https://andreax.dev/docs/interactive
 

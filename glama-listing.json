@@ -1,6 +1,6 @@
 {
   "name": "Andreax",
-  "description": "Pay-per-call AI tools marketplace. 200+ tools (OCR, translate, summarize, embeddings, financial, code analysis) that charge via x402 + USDC on Base. No API keys, no signup — payment IS the auth.",
+  "description": "Pay-per-call AI tools marketplace. 221+ tools (OCR, translate, summarize, embeddings, financial, code analysis) that charge via x402 + USDC on Base. No API keys, no signup — payment IS the auth.",
   "url": "https://andreax.dev",
   "discover_endpoint": "https://andreax.dev/api/agents/discover",
   "docs": "https://andreax.dev/docs/interactive",
@@ -22,17 +22,23 @@
     "url": "https://andreax.dev"
   },
   "metadata": {
-    "tools_count": 207,
+    "tools_count": 221,
     "blockchain": "base_mainnet",
     "payment_token": "USDC",
     "payment_standard": "x402 + EIP-3009",
     "gasless": true,
     "sdk_status": {
       "python_langchain": "published",
-      "python_pure": "ready_to_publish",
+      "python_pure": "published",
       "javascript": "ready_to_publish"
     },
     "pypi_url": "https://pypi.org/project/andreax-langchain-autopay/0.1.0/",
-    "sdk_notes": "python_pure y javascript estan construidos, testeados (14/14 y 11/11) y verificados end-to-end contra el catalogo real, pero AUN NO publicados en PyPI/npm — ver /app/sdk/PUBLISH_PYPI_PURE.md y PUBLISH_NPM.md. Actualizar sdk_status a 'published' recien despues de correr esos pasos."
+    "pypi_url_pure": "https://pypi.org/project/andreax-sdk/0.1.0/",
+    "sdk_notes": "javascript (@andreax/sdk) esta construido, testeado (11/11) y verificado end-to-end contra el catalogo real, pero AUN NO publicado en npm — ver /app/sdk/PUBLISH_NPM.md. Actualizar sdk_status a 'published' recien despues de correr ese paso.",
+    "proof_of_payment": {
+      "first_onchain_payment_tx": "https://basescan.org/tx/0x8d4796d780c3e79cd552e80eb61585b8ff5eacf41acb2a313129d1ccf70c01f9",
+      "facilitator": "self-hosted (no Coinbase CDP dependency)",
+      "network": "Base mainnet"
+    }
   }
 }

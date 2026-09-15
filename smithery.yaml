@@ -45,5 +45,5 @@ metadata:
   sdk: "pip install andreax-langchain-autopay"
   sdks:
     python_langchain: "pip install andreax-langchain-autopay"  # publicado en PyPI
-    python_pure: "pip install andreax-sdk"  # construido y testeado (14/14), pendiente de publicar (ver /app/sdk/PUBLISH_PYPI_PURE.md)
+    python_pure: "pip install andreax-sdk"  # publicado en PyPI (verificado: pip index versions andreax-sdk)
     javascript: "npm install @andreax/sdk"  # construido y testeado, pendiente de publicar (ver /app/sdk/PUBLISH_NPM.md)
